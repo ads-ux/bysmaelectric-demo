@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bysma Electric | Sam Bysma, Master Electrician — Guelph, ON</title>
+<meta name="description" content="Sam Bysma has been Guelph's trusted Master Electrician for over 22 years. Residential & commercial electrical, panel upgrades, EV chargers. Call 519-265-7979 for a free estimate.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d2240;
+    --navy-mid: #163354;
+    --navy-light: #1e4a7a;
+    --gold: #e8a020;
+    --gold-dark: #c8881a;
+    --white: #ffffff;
+    --off-white: #f7f8fa;
+    --light-grey: #eef0f4;
+    --mid-grey: #8a95a3;
+    --dark-grey: #3a4250;
+    --text: #1a2030;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif; color: var(--text); line-height: 1.6; font-size: 16px; }
+  h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
+  h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  h3 { font-size: 1.15rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 88px 0; }
+  .section--dark { background: var(--navy); color: var(--white); }
+  .section--light { background: var(--off-white); }
+  .section--white { background: var(--white); }
+  .text-center { text-align: center; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .section-title { margin-bottom: 16px; }
+  .section-sub { font-size: 1.05rem; color: var(--mid-grey); max-width: 600px; margin: 0 auto 48px; line-height: 1.7; }
+
+  /* BUTTONS */
+  .btn { display: inline-block; padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; letter-spacing: 0.02em; }
+  .btn-primary { background: var(--gold); color: var(--navy); }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.45); }
+  .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-mid); }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--navy); border-bottom: 2px solid var(--gold); }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1100px; margin: 0 auto; height: 68px; }
+  .nav__logo { text-decoration: none; display: flex; flex-direction: column; gap: 1px; }
+  .nav__logo-name { font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: 0.02em; }
+  .nav__logo-sub { font-size: 0.68rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .nav__links { display: flex; gap: 28px; list-style: none; align-items: center; }
+  .nav__links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav__links a:hover { color: var(--white); }
+  .nav__cta { background: var(--gold) !important; color: var(--navy) !important; padding: 8px 20px !important; border-radius: 4px; font-weight: 700 !important; }
+  .nav__cta:hover { background: var(--gold-dark) !important; }
+  @media (max-width: 680px) { .nav__links { display: none; } }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(140deg, #050f1e 0%, var(--navy) 50%, #0f2e54 100%);
+    display: flex;
+    align-items: center;
+    padding-top: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
+  }
+  .hero__inner {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto; padding: 80px 24px;
+    display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
+  }
+  .hero__eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--gold); font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .hero__eyebrow::before { content: ''; display: block; width: 32px; height: 2px; background: var(--gold); }
+  .hero__title { color: var(--white); margin-bottom: 22px; }
+  .hero__title em { font-style: normal; color: var(--gold); }
+  .hero__body { color: rgba(255,255,255,0.72); font-size: 1.08rem; line-height: 1.75; margin-bottom: 36px; max-width: 520px; }
+  .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 48px; }
+  .hero__phone { color: var(--white); font-size: 1.15rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+  .hero__phone::before { content: '📞'; font-size: 1rem; }
+  .hero__phone:hover { color: var(--gold); }
+
+  .hero__proof {
+    display: flex; gap: 0;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .hero__proof-item {
+    flex: 1; padding: 18px 20px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero__proof-item:last-child { border-right: none; }
+  .hero__proof-num { display: block; font-size: 1.9rem; font-weight: 800; color: var(--gold); line-height: 1; }
+  .hero__proof-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* Hero form card */
+  .hero__card { background: var(--white); border-radius: 12px; padding: 36px 32px; box-shadow: 0 32px 80px rgba(0,0,0,0.45); }
+  .hero__card-title { color: var(--navy); font-size: 1.15rem; margin-bottom: 4px; }
+  .hero__card-sub { color: var(--mid-grey); font-size: 0.85rem; margin-bottom: 24px; }
+  .form-group { margin-bottom: 15px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--dark-grey); margin-bottom: 5px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px; border: 1.5px solid #d4d8e0; border-radius: 6px;
+    font-size: 0.93rem; font-family: inherit; color: var(--text); background: var(--white);
+    transition: border-color 0.2s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--navy-light); }
+  .form-group textarea { resize: vertical; min-height: 76px; }
+  .form-submit { width: 100%; padding: 14px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+  .form-submit:hover { background: var(--gold-dark); }
+  .form-note { text-align: center; font-size: 0.76rem; color: var(--mid-grey); margin-top: 10px; }
+
+  @media (max-width: 920px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__card { max-width: 480px; }
+  }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--gold); padding: 16px 0; }
+  .trust-bar__inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 28px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 7px; font-size: 0.86rem; font-weight: 700; color: var(--navy); }
+
+  /* SAM INTRO — full-width personal section */
+  .sam-intro { padding: 88px 0; background: var(--white); }
+  .sam-intro__grid { display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: start; }
+  .sam-photo-block { position: relative; }
+  .sam-photo {
+    width: 100%; aspect-ratio: 3/4; background: var(--navy-mid);
+    border-radius: 12px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+    color: rgba(255,255,255,0.4); font-size: 0.85rem; font-style: italic;
+    overflow: hidden;
+  }
+  .sam-photo__icon { font-size: 4rem; opacity: 0.3; }
+  .sam-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--gold); color: var(--navy);
+    padding: 16px 20px; border-radius: 10px;
+    text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .sam-badge__num { font-size: 2.2rem; font-weight: 800; line-height: 1; display: block; }
+  .sam-badge__label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .sam-content { padding-top: 8px; }
+  .sam-quote {
+    font-size: 1.25rem; font-style: italic; color: var(--navy);
+    border-left: 4px solid var(--gold); padding-left: 20px;
+    margin-bottom: 28px; line-height: 1.65;
+  }
+  .sam-body { color: var(--dark-grey); font-size: 1.02rem; line-height: 1.8; margin-bottom: 20px; }
+  .sam-creds { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+  .sam-cred {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px; background: var(--off-white); border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+  .sam-cred__icon { font-size: 1.3rem; flex-shrink: 0; }
+  .sam-cred__title { font-size: 0.93rem; font-weight: 700; color: var(--navy); }
+  .sam-cred__sub { font-size: 0.8rem; color: var(--mid-grey); }
+  @media (max-width: 860px) {
+    .sam-intro__grid { grid-template-columns: 1fr; }
+    .sam-photo { max-width: 360px; }
+    .sam-badge { right: 0; bottom: -16px; }
+  }
+
+  /* GUELPH SECTION */
+  .guelph { padding: 88px 0; background: var(--navy); color: var(--white); }
+  .guelph__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .guelph__body { color: rgba(255,255,255,0.75); font-size: 1.02rem; line-height: 1.8; margin-bottom: 24px; }
+  .guelph__homes { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .home-type {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 18px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+  }
+  .home-type__icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .home-type__title { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .home-type__desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  @media (max-width: 800px) { .guelph__grid { grid-template-columns: 1fr; } }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  .service-card {
+    background: var(--white); border: 1.5px solid var(--light-grey);
+    border-radius: 10px; padding: 30px 26px;
+    transition: all 0.25s ease; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transition: transform 0.25s ease; transform-origin: left;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(13,34,64,0.1); border-color: transparent; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card__icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+  .service-card__title { font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+  .service-card__desc { font-size: 0.88rem; color: var(--dark-grey); line-height: 1.65; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .tcard {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px; padding: 28px;
+  }
+  .tcard__stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 14px; }
+  .tcard__text { color: rgba(255,255,255,0.82); font-size: 0.94rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .tcard__name { font-weight: 700; color: var(--white); font-size: 0.9rem; }
+  .tcard__area { font-size: 0.8rem; color: var(--mid-grey); }
+
+  /* WHY SAM */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: 48px; }
+  .why-item { text-align: center; }
+  .why-item__icon {
+    width: 68px; height: 68px; border-radius: 50%;
+    background: rgba(232,160,32,0.1); border: 2px solid rgba(232,160,32,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; margin: 0 auto 16px;
+  }
+  .why-item__title { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .why-item__desc { font-size: 0.87rem; color: var(--mid-grey); line-height: 1.65; }
+
+  /* SERVICE AREAS */
+  .areas-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+  .area-tag { background: var(--white); border: 1.5px solid var(--light-grey); color: var(--navy); padding: 8px 20px; border-radius: 100px; font-size: 0.88rem; font-weight: 600; }
+  .area-tag--primary { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* CTA BAND */
+  .cta-band { background: var(--gold); padding: 72px 0; text-align: center; }
+  .cta-band h2 { color: var(--navy); margin-bottom: 12px; }
+  .cta-band p { color: rgba(13,34,64,0.7); margin-bottom: 36px; font-size: 1.05rem; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .cta-band__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  .footer { background: #07101e; color: rgba(255,255,255,0.6); padding: 60px 0 32px; }
+  .footer__grid { max-width: 1100px; margin: 0 auto; padding: 0 24px 48px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  .footer__name { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 2px; }
+  .footer__sub { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+  .footer__desc { font-size: 0.87rem; line-height: 1.65; max-width: 280px; margin-bottom: 16px; }
+  .esa-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(232,160,32,0.1); border: 1px solid rgba(232,160,32,0.3); color: var(--gold); padding: 5px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 600; }
+  .footer h4 { color: var(--white); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+  .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer__links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.87rem; transition: color 0.2s; }
+  .footer__links a:hover { color: var(--gold); }
+  .footer__contact-item { display: flex; gap: 8px; margin-bottom: 10px; font-size: 0.87rem; }
+  .footer__bottom { max-width: 1100px; margin: 0 auto; padding: 20px 24px 0; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; font-size: 0.76rem; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 680px) { .footer__grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* DEMO BANNER */
+  .demo-banner { background: #1a0a3d; color: white; text-align: center; padding: 10px 24px; font-size: 0.82rem; position: sticky; top: 0; z-index: 200; }
+  .demo-banner strong { color: #c9b1ff; }
+
+  /* Divider */
+  .divider { width: 48px; height: 3px; background: var(--gold); margin: 0 0 28px; }
+  .divider--center { margin: 0 auto 28px; }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>⚡ Demo Preview</strong> — This is a mockup of what a new Bysma Electric site could look like. Not the live site.
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <span class="nav__logo-name">Bysma Electric</span>
+      <span class="nav__logo-sub">Sam Bysma, Master Electrician · Guelph</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#about">About Sam</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#contact" class="nav__cta">Free Estimate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow">Guelph's Electrician Since 2003</div>
+      <h1 class="hero__title">
+        You've Probably Seen<br>Sam's Work Already.
+      </h1>
+      <p class="hero__body">
+        Sam Bysma has been wiring Guelph homes and businesses for over 22 years. From century homes downtown to new builds in Kortright — he knows this city's electrical inside and out.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+        <a href="tel:5192657979" class="hero__phone">519-265-7979</a>
+      </div>
+      <div class="hero__proof">
+        <div class="hero__proof-item">
+          <span class="hero__proof-num">22+</span>
+          <div class="hero__proof-label">Years in Guelph</div>
+        </div>
+        <div class="hero__proof-item">
+          <span class="hero__proof-num">Master</span>
+          <div class="hero__proof-label">Electrician Certified</div>
+        </div>
+        <div class="hero__proof-item">
+          <span class="hero__proof-num">ESA</span>
+          <div class="hero__proof-label">Licensed Contractor</div>
+        </div>
+        <div class="hero__proof-item">
+          <span class="hero__proof-num">Free</span>
+          <div class="hero__proof-label">Estimates</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__card" id="contact">
+      <h3 class="hero__card-title">Request a Free Estimate</h3>
+      <p class="hero__card-sub">Sam will get back to you within one business day.</p>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="519-555-0100">
+        </div>
+        <div class="form-group">
+          <label>Neighbourhood (optional)</label>
+          <input type="text" placeholder="e.g. Kortright Hills, Downtown, Hanlon Creek...">
+        </div>
+        <div class="form-group">
+          <label>What do you need?</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Panel Upgrade or Replacement</option>
+            <option>New Home Wiring</option>
+            <option>EV Charger Installation</option>
+            <option>Pot Lights / Lighting</option>
+            <option>Commercial Electrical</option>
+            <option>Outlets, Switches & Repairs</option>
+            <option>Knob & Tube or Old Wiring</option>
+            <option>Other / Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Anything else Sam should know?</label>
+          <textarea placeholder="Old home, new build, tricky panel..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send My Request →</button>
+        <p class="form-note">🔒 No spam. Sam reads these personally.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-item">⚡ Master Electrician</div>
+    <div class="trust-item">✅ ESA Licensed</div>
+    <div class="trust-item">🏠 Residential & Commercial</div>
+    <div class="trust-item">📋 Free Estimates on All Work</div>
+    <div class="trust-item">📍 Guelph, ON — Since 2003</div>
+  </div>
+</div>
+
+<!-- About Sam — main personal section -->
+<section class="sam-intro" id="about">
+  <div class="container">
+    <div class="sam-intro__grid">
+      <div class="sam-photo-block">
+        <div class="sam-photo">
+          <span class="sam-photo__icon">👤</span>
+          <span>Photo of Sam Bysma</span>
+        </div>
+        <div class="sam-badge">
+          <span class="sam-badge__num">22+</span>
+          <span class="sam-badge__label">Years Serving<br>Guelph</span>
+        </div>
+      </div>
+
+      <div class="sam-content">
+        <span class="section-label">About Sam</span>
+        <div class="divider"></div>
+        <h2 class="section-title" style="color: var(--navy);">Guelph's Electrician.<br>Not a Franchise. Not a Call Centre.</h2>
+
+        <blockquote class="sam-quote">
+          "I've been doing electrical in Guelph since before most of these new subdivisions existed. I know this city's homes."
+        </blockquote>
+
+        <p class="sam-body">
+          Sam Bysma started Bysma Electric over two decades ago with a straightforward idea: do good work, charge a fair price, and treat people's homes the way you'd want your own treated. That hasn't changed.
+        </p>
+        <p class="sam-body">
+          When you call Bysma Electric, Sam is the one who shows up. Not a crew of subcontractors you've never met — Sam himself. He's a certified Master Electrician, the highest level of electrical licensing in Ontario, and he's been putting that to work across Guelph since 2003.
+        </p>
+        <p class="sam-body">
+          In 22 years he's worked in every corner of this city — the century homes on Edinburgh with their knob-and-tube wiring, the 1980s bungalows in the West End that need panel upgrades, and the brand new builds going up in Clairfields and Westminster Woods. He knows what Guelph's homes need because he's worked in all of them.
+        </p>
+
+        <div class="sam-creds">
+          <div class="sam-cred">
+            <span class="sam-cred__icon">⚡</span>
+            <div>
+              <div class="sam-cred__title">Master Electrician — Ontario Certified</div>
+              <div class="sam-cred__sub">The highest level of electrical licensing. Required for permits and complex work.</div>
+            </div>
+          </div>
+          <div class="sam-cred">
+            <span class="sam-cred__icon">✅</span>
+            <div>
+              <div class="sam-cred__title">ESA Licensed Contractor (ECRA)</div>
+              <div class="sam-cred__sub">Licence No. 7009601 · ACP# W-R2036 · Electrical Contractor Registration Agency of the Electrical Safety Authority.</div>
+            </div>
+          </div>
+          <div class="sam-cred">
+            <span class="sam-cred__icon">📅</span>
+            <div>
+              <div class="sam-cred__title">22+ Years in Guelph</div>
+              <div class="sam-cred__sub">Local since 2003 — not a franchise, not a national chain. Just Sam.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guelph homes section -->
+<section class="guelph">
+  <div class="container">
+    <div class="guelph__grid">
+      <div>
+        <span class="section-label">Why Experience Matters</span>
+        <div class="divider"></div>
+        <h2 style="color: white; margin-bottom: 20px;">Every Guelph Home<br>Is a Little Different.</h2>
+        <p class="guelph__body">
+          Guelph is an unusual city electrically. You've got 100-year-old stone homes downtown with wiring that predates modern code, postwar bungalows in the West End running on 60-amp service, and massive new developments on the south end all going in at once. There's no one-size-fits-all approach.
+        </p>
+        <p class="guelph__body">
+          That's why experience matters. Sam has worked in all of them. He knows what to look for, what the ESA inspector will flag, and how to get the job done right the first time — whether it's a heritage home on Waterloo Ave or a new build in Pergola Commons.
+        </p>
+        <a href="#contact" class="btn btn-primary" style="margin-top: 12px;">Talk to Sam About Your Home</a>
+      </div>
+
+      <div class="guelph__homes">
+        <div class="home-type">
+          <span class="home-type__icon">🏛️</span>
+          <div>
+            <div class="home-type__title">Downtown & Heritage Homes</div>
+            <div class="home-type__desc">Century homes on Waterloo Ave, Edinburgh Rd, and the Ward often have knob-and-tube or aluminum wiring. Sam knows how to bring them up to code safely and affordably.</div>
+          </div>
+        </div>
+        <div class="home-type">
+          <span class="home-type__icon">🏠</span>
+          <div>
+            <div class="home-type__title">West End & Postwar Bungalows</div>
+            <div class="home-type__desc">Homes built in the '60s–'80s are regularly running on 60-amp or 100-amp panels that can't handle modern loads. Panel upgrades are one of Sam's most common Guelph jobs.</div>
+          </div>
+        </div>
+        <div class="home-type">
+          <span class="home-type__icon">🏗️</span>
+          <div>
+            <div class="home-type__title">New Builds — South End & Clairfields</div>
+            <div class="home-type__desc">New construction in Kortright Hills, Westminster Woods, and Pergola Commons requires rough-in wiring, service connections, and ESA inspection. Sam works with builders and direct with homeowners.</div>
+          </div>
+        </div>
+        <div class="home-type">
+          <span class="home-type__icon">🏢</span>
+          <div>
+            <div class="home-type__title">Commercial & Light Industrial</div>
+            <div class="home-type__desc">Guelph has a strong commercial and manufacturing base. Sam handles office fit-outs, retail spaces, and light industrial electrical — permitted and to code.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section section--light" id="services">
+  <div class="container text-center">
+    <span class="section-label">Services</span>
+    <h2 class="section-title">What Sam Does</h2>
+    <p class="section-sub">Residential and commercial electrical work — all permitted, all to ESA standards, all done by Sam himself.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-card__icon">🔌</span>
+        <h3 class="service-card__title">Panel Upgrades</h3>
+        <p class="service-card__desc">Upgrading from 60-amp or 100-amp to 200-amp service. Essential for EV chargers, hot tubs, or older Guelph homes that need more capacity. Fully permitted.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__icon">🏠</span>
+        <h3 class="service-card__title">Residential Electrical</h3>
+        <p class="service-card__desc">Renovations, additions, new construction wiring, and repairs. Sam has worked in every neighbourhood in Guelph — old homes and new builds alike.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__icon">🚗</span>
+        <h3 class="service-card__title">EV Charger Installation</h3>
+        <p class="service-card__desc">Level 2 home charging for all makes and models. Includes circuit assessment, panel check, ESA permit, and inspection — done properly.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__icon">💡</span>
+        <h3 class="service-card__title">Pot Lights & Lighting</h3>
+        <p class="service-card__desc">Recessed pot lights, dimmer switches, outdoor lighting, under-cabinet strips. Installed cleanly — minimal ceiling damage, no mess left behind.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__icon">🧱</span>
+        <h3 class="service-card__title">Knob & Tube / Old Wiring</h3>
+        <p class="service-card__desc">Common in Guelph's downtown and older West End homes. Sam has updated hundreds of them — he knows what insurers require and what the ESA inspector looks for.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__icon">🏢</span>
+        <h3 class="service-card__title">Commercial Electrical</h3>
+        <p class="service-card__desc">Office fit-outs, retail and warehouse electrical, light industrial. Guelph's business community has trusted Sam for over two decades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <span class="section-label">What Guelph Says</span>
+    <h2 class="section-title" style="color: white;">Over 22 Years of Happy Customers</h2>
+    <p class="section-sub">⭐⭐⭐⭐⭐ Rated 5 Stars on Google</p>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__text">"We have one of the old stone homes on Waterloo Ave. Sam knew exactly what he was dealing with before he even opened the panel. Upgraded the wiring, zero surprises on the bill."</p>
+        <div class="tcard__name">Rob & Lisa M.</div>
+        <div class="tcard__area">Downtown Guelph</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__text">"Called Sam for a panel upgrade so we could add an EV charger. He was upfront about the cost, showed up on time, and it passed ESA inspection without a single issue. This is how it should work."</p>
+        <div class="tcard__name">James T.</div>
+        <div class="tcard__area">Kortright Hills, Guelph</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard__stars">★★★★★</div>
+        <p class="tcard__text">"We've used Sam for three jobs now — pot lights, a hot tub circuit, and new outlets in the kitchen. Every time he's exactly what you want in a tradesperson: on time, fair price, clean work."</p>
+        <div class="tcard__name">Karen F.</div>
+        <div class="tcard__area">West End, Guelph</div>
+      </div>
+    </div>
+    <p style="color: rgba(255,255,255,0.3); font-size: 0.76rem; margin-top: 28px; font-style: italic;">* Sample testimonials shown for demo purposes</p>
+  </div>
+</section>
+
+<!-- Why Sam -->
+<section class="section section--white">
+  <div class="container text-center">
+    <span class="section-label">Why Sam</span>
+    <h2 class="section-title">What You're Actually Getting</h2>
+    <p class="section-sub">When you call Bysma Electric, you're not getting a dispatcher. You're getting Sam.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-item__icon">👤</div>
+        <h3 class="why-item__title">Sam Shows Up — Not a Sub</h3>
+        <p class="why-item__desc">Sam does the work himself. No crews of unfamiliar faces, no markup on subcontractors. You deal with the Master Electrician start to finish.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item__icon">📍</div>
+        <h3 class="why-item__title">He Knows Guelph</h3>
+        <p class="why-item__desc">22 years in one city means he's seen your neighbourhood's quirks before. Older wiring, old panels, heritage homes — nothing surprises him.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item__icon">💲</div>
+        <h3 class="why-item__title">Quote Up Front. No Surprises.</h3>
+        <p class="why-item__desc">Free written estimate before any work starts. The price you're quoted is the price you pay — Sam's built his business on that.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-item__icon">📋</div>
+        <h3 class="why-item__title">Permitted. Inspected. Protected.</h3>
+        <p class="why-item__desc">All work is properly permitted and ESA inspected. This protects you when you sell the home and keeps your insurance valid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="section section--light" id="areas">
+  <div class="container text-center">
+    <span class="section-label">Where Sam Works</span>
+    <h2 class="section-title">Guelph & Surrounding Area</h2>
+    <p class="section-sub">Based in Guelph, serving the city and surrounding communities for over 22 years.</p>
+    <div class="areas-list">
+      <span class="area-tag area-tag--primary">📍 Guelph — All Neighbourhoods</span>
+      <span class="area-tag">Downtown & The Ward</span>
+      <span class="area-tag">Kortright Hills</span>
+      <span class="area-tag">Westminster Woods</span>
+      <span class="area-tag">Clairfields</span>
+      <span class="area-tag">West End</span>
+      <span class="area-tag">Hanlon Creek</span>
+      <span class="area-tag">Pineridge</span>
+      <span class="area-tag">Kitchener</span>
+      <span class="area-tag">Waterloo</span>
+      <span class="area-tag">Cambridge</span>
+      <span class="area-tag">Fergus & Elora</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to Talk to Sam?</h2>
+    <p>Free estimates on all installations. No obligation. Sam responds within one business day — usually same day.</p>
+    <div class="cta-band__actions">
+      <a href="#contact" class="btn btn-navy">Request a Free Estimate</a>
+      <a href="tel:5192657979" class="btn btn-navy">📞 Call Sam — 519-265-7979</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__name">Bysma Electric</div>
+      <div class="footer__sub">Sam Bysma, Master Electrician · Guelph, ON</div>
+      <p class="footer__desc">Serving Guelph and the surrounding area since 2003. Residential and commercial electrical — done right, by Sam, every time.</p>
+      <div><span class="esa-badge">✅ ESA Lic. No. 7009601</span></div>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer__links">
+        <li><a href="#">Panel Upgrades</a></li>
+        <li><a href="#">Residential Electrical</a></li>
+        <li><a href="#">EV Charger Installation</a></li>
+        <li><a href="#">Pot Lights & Lighting</a></li>
+        <li><a href="#">Knob & Tube Wiring</a></li>
+        <li><a href="#">Commercial Electrical</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Sam</h4>
+      <div class="footer__contact-item">📍 6 Grey Oak Drive, Guelph ON N1L 1P1</div>
+      <div class="footer__contact-item">📞 <a href="tel:5192657979" style="color: inherit; text-decoration: none;">519-265-7979</a></div>
+      <div class="footer__contact-item">✉️ <a href="mailto:sbysma@bysmaelectric.com" style="color: inherit; text-decoration: none;">sbysma@bysmaelectric.com</a></div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Bysma Electric. All rights reserved.</span>
+    <span style="color: rgba(255,255,255,0.25); font-style: italic;">Demo preview — not the live site</span>
+  </div>
+</footer>
+
+</body>
+</html>
